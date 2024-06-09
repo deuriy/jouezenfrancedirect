@@ -1,0 +1,16 @@
+{
+    "name": "acf/betting-offers",
+    "title": "Betting offers",
+    "description": "Betting offers list.",
+    "style": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["betting", "offers"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

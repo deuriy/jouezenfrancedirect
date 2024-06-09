@@ -1,0 +1,16 @@
+{
+    "name": "acf/agreement-terms",
+    "title": "Agreement terms",
+    "description": "Logo with text.",
+    "style": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["agremeent", "terms"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

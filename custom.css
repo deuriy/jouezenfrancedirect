@@ -310,7 +310,7 @@ a:hover, a:focus, a:active, a:visited {
 	justify-content: space-between;
 	align-items: center;
 	gap: 32px;
-	margin-top: 48px;
+	margin-top: 24px;
 	padding-left: 7px;
 }
 
@@ -931,6 +931,84 @@ a:hover, a:focus, a:active, a:visited {
 
 .agreement-terms__description > p:last-child {
 	margin-bottom: 0;
+}
+
+.page-template-default article.page {
+	margin-bottom: 0;
+}
+
+.page-template-default article.page .entry-title {
+	margin: 0;
+	font-size: 48px;
+	line-height: 1.5;
+	font-family: "Inter", sans-serif;
+	text-align: center;
+	letter-spacing: -0.022em;
+}
+
+@media (max-width: 1023px) {
+	.page-template-default article.page .entry-title {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-template-default article.page .entry-title {
+		font-size: 24px;
+	}
+}
+
+.page-template-default article.page .entry-content {
+	margin-top: 0;
+	padding: 32px 32px 32px 142px;
+	background: rgba(33, 51, 41, 0.8);
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: -0.019em;
+}
+
+@media (max-width: 1023px) {
+	.page-template-default article.page .entry-content {
+		padding: 32px;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-template-default article.page .entry-content {
+		padding: 16px;
+	}
+}
+
+.page-template-default article.page .entry-content h1, .page-template-default article.page .entry-content h2, .page-template-default article.page .entry-content h3, .page-template-default article.page .entry-content h4, .page-template-default article.page .entry-content h5, .page-template-default article.page .entry-content h6 {
+	margin: 21px 0;
+	color: #CBAA64;
+}
+
+.page-template-default article.page .entry-content ul, .page-template-default article.page .entry-content ol {
+	margin-left: 0;
+	padding-left: 21px;
+}
+
+.page-template-default article.page .entry-content h2, .page-template-default article.page .entry-content h3, .page-template-default article.page .entry-content h4 {
+	font-size: 16px;
+}
+
+.page-template-default article.page .entry-content p:first-child {
+	margin-top: 0;
+}
+
+.page-template-default article.page .entry-content p:last-child {
+	margin-bottom: 0;
+}
+
+.page-template-default article.page .entry-content p + ul,
+.page-template-default article.page .entry-content p + ol {
+	margin-top: -1.5em;
+}
+
+.page-template-default article.page .entry-footer {
+	margin-top: 15px;
 }
 
 /*# sourceMappingURL=custom.css.map */

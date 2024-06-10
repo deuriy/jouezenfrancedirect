@@ -1,0 +1,16 @@
+{
+    "name": "acf/intro-text",
+    "title": "Intro text",
+    "description": "Centered title with description.",
+    "style": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["intro", "text", "title", "description"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

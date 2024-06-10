@@ -1,0 +1,16 @@
+{
+    "name": "acf/logos",
+    "title": "Logos",
+    "description": "A custom logos list.",
+    "style": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["logos", "list"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

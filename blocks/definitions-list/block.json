@@ -1,0 +1,16 @@
+{
+    "name": "acf/definitions-list",
+    "title": "Definitions list",
+    "description": "List of definitions.",
+    "style": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["definitions", "list"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

@@ -122,11 +122,71 @@ add_action( 'after_setup_theme', 'jouezenfrancedirect_content_width', 0 );
 function jouezenfrancedirect_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'jouezenfrancedirect' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Top line', 'jouezenfrancedirect' ),
+			'id'            => 'top-line',
 			'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	// register_sidebar(
+	// 	array(
+	// 		'name'          => esc_html__( 'Footer top left', 'jouezenfrancedirect' ),
+	// 		'id'            => 'footer-top-left',
+	// 		'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
+	// 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	// 		'after_widget'  => '</div>',
+	// 		'before_title'  => '<h2 class="widget-title">',
+	// 		'after_title'   => '</h2>',
+	// 	)
+	// );
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer top middle', 'jouezenfrancedirect' ),
+			'id'            => 'footer-top-middle',
+			'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer top right', 'jouezenfrancedirect' ),
+			'id'            => 'footer-top-right',
+			'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer bottom left', 'jouezenfrancedirect' ),
+			'id'            => 'footer-bottom-left',
+			'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer bottom right', 'jouezenfrancedirect' ),
+			'id'            => 'footer-bottom-right',
+			'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -147,7 +207,48 @@ function jouezenfrancedirect_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
+function jouezenfrancedirect_custom_scripts() {
+	wp_enqueue_style( 'jouezenfrancedirect-custom-style', get_template_directory_uri() . '/custom.css', array(), _S_VERSION );
+}
+
 add_action( 'wp_enqueue_scripts', 'jouezenfrancedirect_scripts' );
+add_action( 'wp_enqueue_scripts', 'jouezenfrancedirect_custom_scripts' );
+add_action( 'enqueue_block_editor_assets', 'jouezenfrancedirect_custom_scripts' );
+
+
+/**
+ * We use WordPress's init hook to make sure
+ * our blocks are registered early in the loading
+ * process.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/init/
+ */
+function jouezenfrancedirect_register_acf_blocks() {
+    /**
+     * We register our block's with WordPress's handy
+     * register_block_type();
+     *
+     * @link https://developer.wordpress.org/reference/functions/register_block_type/
+     */
+    register_block_type( __DIR__ . '/blocks/logos' );
+    register_block_type( __DIR__ . '/blocks/intro-text' );
+    register_block_type( __DIR__ . '/blocks/betting-offers' );
+    register_block_type( __DIR__ . '/blocks/definitions-list' );
+    register_block_type( __DIR__ . '/blocks/agreement-terms' );
+}
+// Here we call our tt3child_register_acf_block() function on init.
+add_action( 'init', 'jouezenfrancedirect_register_acf_blocks' );
+
+
+function upload_svg_files( $allowed ) {
+  if ( !current_user_can( 'manage_options' ) )
+    return $allowed;
+  $allowed['svg'] = 'image/svg+xml';
+  return $allowed;
+}
+add_filter( 'upload_mimes', 'upload_svg_files');
+
 
 /**
  * Implement the Custom Header feature.

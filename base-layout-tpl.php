@@ -4,6 +4,10 @@ Template Name: Base Layout Template
 */
 
 get_header();
-the_content();
-get_footer();
 ?>
+
+<main id="primary" class="site-main">
+  <?php the_content(); ?>
+</main>
+
+<?php get_footer(); ?>

@@ -16,7 +16,7 @@
 		<div class="container">
 				
 			<div class="site-footer__top">
-				<div class="site-footer__col">
+				<div class="site-footer__top-col">
 					<?php //dynamic_sidebar( 'footer-top-left' ); ?>
 					<div class="site-branding site-branding--small">
 						<?php
@@ -35,21 +35,21 @@
 					</div><!-- .site-branding -->
 				</div>
 
-				<div class="site-footer__col">
+				<div class="site-footer__top-col">
 					<?php dynamic_sidebar( 'footer-top-middle' ); ?>
 				</div>
 
-				<div class="site-footer__col">
+				<div class="site-footer__top-col">
 					<?php dynamic_sidebar( 'footer-top-right' ); ?>
 				</div>
 			</div>
 
 			<div class="site-footer__bottom">
-				<div class="site-footer__col">
+				<div class="site-footer__bottom-col">
 					<?php dynamic_sidebar( 'footer-bottom-left' ); ?>
 				</div>
 
-				<div class="site-footer__col">
+				<div class="site-footer__bottom-col">
 					<?php dynamic_sidebar( 'footer-bottom-right' ); ?>
 				</div>
 			</div>

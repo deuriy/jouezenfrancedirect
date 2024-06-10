@@ -132,17 +132,17 @@ function jouezenfrancedirect_widgets_init() {
 		)
 	);
 
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Footer top left', 'jouezenfrancedirect' ),
-			'id'            => 'footer-top-left',
-			'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+	// register_sidebar(
+	// 	array(
+	// 		'name'          => esc_html__( 'Footer top left', 'jouezenfrancedirect' ),
+	// 		'id'            => 'footer-top-left',
+	// 		'description'   => esc_html__( 'Add widgets here.', 'jouezenfrancedirect' ),
+	// 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	// 		'after_widget'  => '</div>',
+	// 		'before_title'  => '<h2 class="widget-title">',
+	// 		'after_title'   => '</h2>',
+	// 	)
+	// );
 
 	register_sidebar(
 		array(
@@ -207,7 +207,14 @@ function jouezenfrancedirect_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
+function jouezenfrancedirect_custom_scripts() {
+	wp_enqueue_style( 'jouezenfrancedirect-custom-style', get_template_directory_uri() . '/custom.css', array(), _S_VERSION );
+}
+
 add_action( 'wp_enqueue_scripts', 'jouezenfrancedirect_scripts' );
+add_action( 'wp_enqueue_scripts', 'jouezenfrancedirect_custom_scripts' );
+add_action( 'enqueue_block_editor_assets', 'jouezenfrancedirect_custom_scripts' );
 
 
 /**

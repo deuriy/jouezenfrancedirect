@@ -83,7 +83,9 @@ if ( ! empty( $block['className'] ) ) {
           <?php endif ?>
 
           <?php if ($rating): ?>
-            <div class="rating">
+            <div class="rating betting-offer__rating">
+              <div class="rating__label">NOTATION</div>
+              
               <ul class="rating__stars">
                 <?php for ($i = 0; $i < $rating; $i++): ?>
                   <li class="rating__star"></li>
